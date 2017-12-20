@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 图文识别帮助类
+ * 图文识别帮助类（一），调用cmd实现图文识别
  *
  * @author LiPing
  * @create 2017-12-19-9:12
@@ -27,7 +27,6 @@ public class OCRHelper {
 
     /**
      * @param imageFile   传入的图像文件
-     * @param imageFormat 传入的图像格式
      * @return 识别后的字符串
      */
     public String recognizeText(File imageFile) throws Exception {

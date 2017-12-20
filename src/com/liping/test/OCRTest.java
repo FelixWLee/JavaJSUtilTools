@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author LiPing
  * @create 2017-12-19-9:17
  */
-public class Test {
+public class OCRTest {
 
     public static void main(String[] args) {
         try {

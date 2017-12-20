@@ -1,10 +1,10 @@
-package com.liping.test.com.liping.utils;
+package com.liping.utils;
 
 import java.io.File;
 import java.io.IOException;
 
 /**
- * 获取各种路径工具类集合
+ * JAVA中获取各种路径工具类集合
  *
  * @author LiPing
  * @create 2017-12-20-15:40
@@ -16,7 +16,7 @@ public class JavaUrlUtil {
      *  获取项目根路径 第一种方法
      * @return 项目根路径，例如： D:\IDEAWorkSpace\JavaJSUtilTools
      */
-    public static String getProjectRootURL1(){
+    public static String getProjectRootUrl1(){
         File directory = new File("");// 参数为空
         String courseFile = null;
         try {
@@ -31,7 +31,7 @@ public class JavaUrlUtil {
      * 获取项目根路径 第二种方法
      * @return 项目根路径，例如： D:\IDEAWorkSpace\JavaJSUtilTools
      */
-    public static String getProjectRootURL2(){
+    public static String getProjectRootUrl2(){
 
         return  System.getProperty("user.dir");
     }
@@ -72,12 +72,9 @@ public class JavaUrlUtil {
 
 
     public static void main(String[] args){
-       //D:\IDEAWorkSpace\JavaJSUtilTools
-       // /D:/IDEAWorkSpace/JavaJSUtilTools/out/production/JavaJSUtilTools/
+
         String p1=JavaUrlUtil.class.getClassLoader().getResource("").getPath();
         System.out.println(p1);
-
-
         System.out.println(JavaUrlUtil.class.getResource("").getPath());
     }
 
