@@ -1,0 +1,83 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta charset="utf-8" />
+    <title>可编辑表格</title>
+    <script>
+        function addRow(){
+
+            var oTable = document.getElementById("oTable");
+            var tBodies = oTable.tBodies;
+            var tbody = tBodies[0];
+            var tr = tbody.insertRow(tbody.rows.length);
+            var td_1 = tr.insertCell(0);
+            td_1.style.contenteditable = true;
+            td_1.innerHTML = "第1列";
+            var td_2 = tr.insertCell(1);
+            td_2.style.contenteditable =  "true";
+            td_2.innerHTML = "第2列";
+            var td_3 = tr.insertCell(2);
+            td_3.innerHTML = "<input type='button' onClick='addRow();' style='font-size:16px;' value='+'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onClick='deleteRow(this);' style='font-size:16px;' value='-'/>";
+
+        }
+
+        function deleteRow(r){
+            var i = r.parentElement.parentElement.rowIndex;
+            document.getElementById('oTable').deleteRow(i);
+
+        }
+
+        /**
+         * 遍历表格内容返回数组
+         * @param  Int   id 表格id
+         * @return Array
+         */
+        function getTableContent(){
+            var mytable = document.getElementById("oTable");
+            var data = [];
+            for(var i=1,rows=mytable.rows.length; i<rows; i++){
+                for(var j=0,cells=mytable.rows[i].cells.length-1; j<cells; j++){
+                    if(!data[i]){
+                        data[i] = new Array();
+                    }
+                    data[i][j] = mytable.rows[i].cells[j].innerHTML;
+                }
+            }
+            return data;
+        }
+
+        function getTable() {
+            console.info("1");
+            var data1 = getTableContent();
+            console.info("array : "+data1);
+        }
+
+    </script>
+</head>
+<body>
+<fieldset>
+    <legend>可编辑的表格</legend>
+    <table id="oTable" style="background-color:#eeeeee;" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
+        <thead>
+        <tr>
+            <th>第一列标题</th>
+            <th>第二列标题</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <!--<td><div  contenteditable="true" >第一行第一列</div></td>-->
+            <!--<td><div  contenteditable="true" >第一行第二列</div></td>-->
+            <td contenteditable="true" >第一行第一列</td>
+            <td contenteditable="true" >第一行第一列</td>
+            <td><input type="button" onClick="addRow();" style="font-size:16px;" value="+"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onClick="deleteRow(this);" style="font-size:16px;" value="-"/></td>
+
+        </tr>
+        </tbody>
+    </table>
+</fieldset>
+<!--<input type="button" onClick="addRow();" style="font-size:16px;" value="+"/>-->
+<input type="button" onClick="getTable();" style="font-size:16px;" value="getContent"/>
+</body>
+</html>
