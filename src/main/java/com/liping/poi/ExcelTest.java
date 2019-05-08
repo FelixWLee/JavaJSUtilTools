@@ -89,7 +89,7 @@ public class ExcelTest {
             initOtherConstraints(mainSheet);
             out.flush();
             wb.write(out);
-//            file.deleteOnExit();
+            //file.deleteOnExit();
         } catch (Exception e) {
             e.printStackTrace();
             LOG.error("生成入库excel模版失败！", e);
