@@ -12,10 +12,10 @@ import java.util.Arrays;
  */
 public class BubbleSort {
     
-    public static int[] bubbleSort(int[] array) {
+    public static void bubbleSort(int[] array) {
         
         if (array == null || array.length <= 0) {
-            return null;
+            return;
         }
         
         
@@ -30,8 +30,6 @@ public class BubbleSort {
             }
         }
         
-        return array;
-        
     }
     
     public static void swap(T[] arr, int a, int b) {
@@ -42,9 +40,10 @@ public class BubbleSort {
     
     public static void main(String[] args) {
         int[] arr = {21, 12, 32, 23, 35, 39, 54, 7, 29, 67, 9};
-        System.out.println(Arrays.toString(arr));
-        int[] sortedArr = BubbleSort.bubbleSort(arr);
-        System.out.println(Arrays.toString(sortedArr));
+        System.out.println("排序前：" + Arrays.toString(arr));
+        BubbleSort.bubbleSort(arr);
+        System.out.println("排序后：" + Arrays.toString(arr));
+        //Arrays.stream(arr).forEach(System.out::println);
     }
     
     
