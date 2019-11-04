@@ -80,6 +80,5 @@ class ConreteDecorator extends Decorator {
     private void addedFunction() {
         System.out.println("为具体构件角色增加额外的功能addedFunction()");
     }
-    
 }
 

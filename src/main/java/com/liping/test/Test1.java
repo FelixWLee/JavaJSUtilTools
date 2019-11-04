@@ -12,6 +12,7 @@ public class Test1 {
     public static void main(String[] args){
         int[] a = {3,2,4};
         System.out.println(Arrays.toString(twoSum(a, 6)));
+        
     }
     
     public static  int[] twoSum(int[] nums, int target) {
