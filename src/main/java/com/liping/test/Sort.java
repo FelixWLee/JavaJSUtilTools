@@ -38,9 +38,12 @@ public class Sort {
     }
     
     public static void main(String[] args){
-        int[] a = {5,1, 4, 6, 0 , 9};
-        selectSort(a);
-        System.out.println(Arrays.toString(a));
+//        int[] a = {5,1, 4, 6, 0 , 9};
+//        selectSort(a);
+//        System.out.println(Arrays.toString(a));
+
+        int i = (4-1)/2 + 1;
+        System.out.println(i);
         
     }
 }

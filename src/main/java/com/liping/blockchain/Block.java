@@ -1,5 +1,6 @@
 package com.liping.blockchain;
 
+import com.google.gson.GsonBuilder;
 import com.liping.utils.StringUtil;
 
 import java.time.LocalDateTime;
