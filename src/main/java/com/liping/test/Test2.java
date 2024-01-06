@@ -6,7 +6,7 @@ import java.util.*;
  * @author LiPing
  * @create 2022-05-10-21:14
  */
-public class Test {
+public class Test2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // 注意 hasNext 和 hasNextLine 的区别
